@@ -1,4 +1,5 @@
 import Animation from "./animation";
+import Link from "next/link";
 
 export default function Main() {
   return (
@@ -19,11 +20,11 @@ export default function Main() {
             mlkshk tote bag selvage hot chicken authentic tumeric truffaut
             hexagon try-hard chambray.
           </p>
-          <div className="flex justify-center">
+          <Link href="/projects">
             <button className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">
               프로젝트 보러가기
             </button>
-          </div>
+          </Link>
         </div>
       </div>
     </section>
