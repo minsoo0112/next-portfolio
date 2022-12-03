@@ -1,4 +1,5 @@
 import Link from "next/link";
+import DarkModeToggleButton from "./dark-mode-toggle-button";
 
 export default function Header() {
   return (
@@ -10,7 +11,7 @@ export default function Header() {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke="currentColor"
               className="w-10 h-10 text-white p-2 bg-blue-500 rounded-full"
             >
@@ -25,29 +26,20 @@ export default function Header() {
           </a>
         </Link>
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-
           <Link href="/" legacyBehavior>
             <a className="mr-5 hover:text-gray-900 font-semibold">홈</a>
           </Link>
           <Link href="/projects" legacyBehavior>
             <a className="mr-5 hover:text-gray-900 font-semibold">프로젝트</a>
           </Link>
-          <a href="https://open.kakao.com/o/sHuAf7Qe" className="mr-5 hover:text-gray-900 font-semibold">연락하기</a>
-        </nav>
-        <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
-          Button
-          <svg
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            className="w-4 h-4 ml-1"
-            viewBox="0 0 24 24"
+          <a
+            href="https://open.kakao.com/o/sHuAf7Qe"
+            className="mr-5 hover:text-gray-900 font-semibold"
           >
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </button>
+            연락하기
+          </a>
+        </nav>
+        <DarkModeToggleButton />
       </div>
     </header>
   );
