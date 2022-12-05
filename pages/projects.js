@@ -2,7 +2,7 @@ import Head from "next/head";
 import Layout from "./components/layout";
 import { TOKEN, DATABASE_ID } from "../config";
 
-export default function Projects() {
+export default function Projects({projects}) {
   return (
     <Layout>
       <Head>
@@ -10,7 +10,12 @@ export default function Projects() {
         <meta name="description" content="민수의 포트폴리오" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>projects</h1>
+      <h1>총 프로젝트 : {projects.results.length}</h1>
+
+      {projects.results.map((project) => (
+        <h1>{project.properties.이름.title[0].plain_text}</h1>
+      ))}
+
     </Layout>
   );
 }
@@ -25,16 +30,22 @@ export async function getStaticProps() {
       'content-type': 'application/json',
       Authorization: `Bearer ${TOKEN}`
     },
-    body: JSON.stringify({page_size: 100})
+    body: JSON.stringify({
+      sorts: [
+        {
+          "property": "기간",
+          "direction": "descending"
+        }
+      ],
+      page_size: 100
+    })
   };
 
   const res = await fetch(`https://api.notion.com/v1/databases/${DATABASE_ID}/query`, options)
   
-  const result = await res.json();  
-
-  console.log(result)
+  const projects = await res.json();  
 
   return {
-    props: {}, // will be passed to the page component as props
+    props: {projects}, // will be passed to the page component as props
   }
 }
