@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Layout from "./components/layout";
 import { TOKEN, DATABASE_ID } from "../config";
+import ProjectItem from "./components/projects/project-item";
 
 export default function Projects({projects}) {
   return (
@@ -13,7 +14,7 @@ export default function Projects({projects}) {
       <h1>총 프로젝트 : {projects.results.length}</h1>
 
       {projects.results.map((project) => (
-        <h1>{project.properties.이름.title[0].plain_text}</h1>
+        <ProjectItem key={project.id} data={project} />
       ))}
 
     </Layout>
@@ -33,7 +34,7 @@ export async function getStaticProps() {
     body: JSON.stringify({
       sorts: [
         {
-          "property": "기간",
+          "property": "WorkPeriod",
           "direction": "descending"
         }
       ],
@@ -43,7 +44,7 @@ export async function getStaticProps() {
 
   const res = await fetch(`https://api.notion.com/v1/databases/${DATABASE_ID}/query`, options)
   
-  const projects = await res.json();  
+  const projects = await res.json(); 
 
   return {
     props: {projects}, // will be passed to the page component as props
