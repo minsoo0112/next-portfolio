@@ -11,11 +11,15 @@ export default function Projects({projects}) {
         <meta name="description" content="민수의 포트폴리오" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>총 프로젝트 : {projects.results.length}</h1>
+      <h1 className="flex items-center justify-center text-4xl font-bold">총 프로젝트 : 
+        <span className="pl-4 text-blue-300">{projects.results.length}</span>
+      </h1>
 
-      {projects.results.map((project) => (
-        <ProjectItem key={project.id} data={project} />
-      ))}
+      <div className="grid grid-cols-1 md:grid-cols-2 py-5 m-6">
+        {projects.results.map((project) => (
+          <ProjectItem key={project.id} data={project} />
+        ))}
+      </div>
 
     </Layout>
   );

@@ -8,9 +8,10 @@ export default function ProjectItem({ data }) {
   const myRole = data.properties.MyRole.rich_text[0].plain_text;
   const workPeriod = data.properties.WorkPeriod.date;
   const imgSrc = data.cover.file.url;
+  const tags = data.properties.Tags.multi_select;
 
   return (
-    <div className="flex flex-col p-2 m-3 bg-slate-500 rounded-xl">
+    <div className="project-card">
       <Image 
         className="rounded-t-xl"
         src={imgSrc} 
@@ -21,16 +22,25 @@ export default function ProjectItem({ data }) {
         quality={100}
       />
 
-      <h1>{title}</h1>
-      <a href={github} className="text-slate-200">
-        깃허브 바로가기
-      </a>
-      <h1>{description}</h1>
-      <h1>{members}</h1>
-      <h1>{myRole}</h1>
-      <h1>
-        {workPeriod.start} ~ {workPeriod.end}
-      </h1>
+      <div className="p-3">
+        <h1 className="text-2xl font-bold">{title}</h1>
+        <h3 className="mt-3 text-lg">{description}</h3>
+        <a href={github} className="text-slate-200">
+          깃허브 바로가기
+        </a>
+        <h1 className="mt-2">팀원 : {members}</h1>
+        <h1 className="mt-2">내 역할 : {myRole}</h1>
+        <h1 className="mt-2">
+          작업기간 : {workPeriod.start} ~ {workPeriod.end}
+        </h1>
+
+        <div className="flex mt-3">
+          {tags.map((tag) => (
+            <h1 className="px-2 py-1 mr-1 rounded-md bg-sky-200 dark:bg-sky-700 w-30" key={tag.id}>{tag.name}</h1>
+          ))}
+        </div>
+
+      </div>
     </div>
   );
 }
