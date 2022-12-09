@@ -12,11 +12,11 @@ export default function ProjectItem({ data }) {
 
   return (
     <div className="project-card">
-      <Image 
+      <Image
         className="rounded-t-xl"
-        src={imgSrc} 
-        width="100" 
-        height="60" 
+        src={imgSrc}
+        width="100"
+        height="60"
         layout="responsive"
         objectFit="none"
         quality={100}
@@ -24,8 +24,8 @@ export default function ProjectItem({ data }) {
 
       <div className="p-3">
         <h1 className="text-2xl font-bold">{title}</h1>
-        <h3 className="mt-3 text-lg">{description}</h3>
-        <a href={github} className="text-slate-200">
+        <h3 className="mt-3 text-xl">{description}</h3>
+        <a href={github} className="mt-2">
           깃허브 바로가기
         </a>
         <h1 className="mt-2">팀원 : {members}</h1>
@@ -34,12 +34,16 @@ export default function ProjectItem({ data }) {
           작업기간 : {workPeriod.start} ~ {workPeriod.end}
         </h1>
 
-        <div className="flex mt-3">
+        <div className="flex flex-row flex-wrap mt-3">
           {tags.map((tag) => (
-            <h1 className="px-2 py-1 mr-1 rounded-md bg-sky-200 dark:bg-sky-700 w-30" key={tag.id}>{tag.name}</h1>
+            <h1
+              className="px-2 py-1 my-1 mr-1 rounded-md bg-sky-200 dark:bg-sky-700 w-30"
+              key={tag.id}
+            >
+              {tag.name}
+            </h1>
           ))}
         </div>
-
       </div>
     </div>
   );
