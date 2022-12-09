@@ -20,11 +20,18 @@ export default function Main() {
             mlkshk tote bag selvage hot chicken authentic tumeric truffaut
             hexagon try-hard chambray.
           </p>
-          <Link href="/projects">
-            <button className="btn-project">
-              프로젝트 보러가기
-            </button>
-          </Link>
+          <div className="flex justify-center">
+            <Link href="/teamProjects">
+              <button className="btn-project">
+                팀 프로젝트 보러가기
+              </button>
+            </Link>
+            <Link href="/toyProjects">
+              <button className="btn-project ml-4">
+                개인 프로젝트 보러가기
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

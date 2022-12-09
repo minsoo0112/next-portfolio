@@ -29,8 +29,11 @@ export default function Header() {
           <Link href="/" legacyBehavior>
             <a className="mr-5 hover:text-gray-900 font-semibold">홈</a>
           </Link>
-          <Link href="/projects" legacyBehavior>
-            <a className="mr-5 hover:text-gray-900 font-semibold">프로젝트</a>
+          <Link href="/teamProjects" legacyBehavior>
+            <a className="mr-5 hover:text-gray-900 font-semibold">팀프로젝트</a>
+          </Link>
+          <Link href="/toyProjects" legacyBehavior>
+            <a className="mr-5 hover:text-gray-900 font-semibold">개인프로젝트</a>
           </Link>
           <a
             href="https://open.kakao.com/o/sHuAf7Qe"
