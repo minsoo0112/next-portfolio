@@ -6,7 +6,8 @@ export default function ProjectItem({ data }) {
   const description = data?.properties.Description.rich_text[0].plain_text;
   const members = data?.properties.Members.rich_text[0].plain_text;
   const myRole = data?.properties.MyRole.rich_text[0].plain_text;
-  const workPeriod = data?.properties.WorkPeriod.date;
+  const workPeriodStart = data?.properties.WorkPeriod.date.start;
+  const workPeriodEnd = data?.properties.WorkPeriod.date.end;
   const imgSrc = data?.cover.file.url;
   const tags = data?.properties.Tags.multi_select;
 
@@ -32,7 +33,7 @@ export default function ProjectItem({ data }) {
         <h1 className="mt-2">팀원 : {members}</h1>
         <h1 className="mt-2">내 역할 : {myRole}</h1>
         <h1 className="mt-2">
-          작업기간 : {workPeriod.start} ~ {workPeriod.end}
+          작업기간 : {workPeriodStart} ~ {workPeriodEnd}
         </h1>
 
         <div className="flex flex-row flex-wrap mt-3">
