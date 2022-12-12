@@ -7,7 +7,7 @@ export default function ProjectItem({ data }) {
   const members = data?.properties.Members.rich_text[0].plain_text;
   const myRole = data?.properties.MyRole.rich_text[0].plain_text;
   const workPeriod = data?.properties.WorkPeriod.date;
-  const imgSrc = data.cover.file.url;
+  const imgSrc = data?.cover.file.url;
   const tags = data?.properties.Tags.multi_select;
 
   return (
