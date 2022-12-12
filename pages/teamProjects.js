@@ -17,7 +17,7 @@ export default function Projects({ projects }) {
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 py-5 m-6">
-        {projects.results.map((project) => (
+        {projects && projects.results.map((project) => (
           <ProjectItem key={project.id} data={project} />
         ))}
       </div>
