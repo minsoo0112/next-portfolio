@@ -13,7 +13,7 @@ export default function Projects({ projects }) {
       </Head>
       <h1 className="flex items-center justify-center text-4xl font-bold">
         총 프로젝트 :
-        <span className="pl-4 text-blue-300">{projects.results.length}</span>
+        <span className="pl-4 text-blue-300">{projects?.results.length}</span>
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 py-5 m-6">
