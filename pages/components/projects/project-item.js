@@ -13,12 +13,13 @@ export default function ProjectItem({ data }) {
   return (
     <div className="project-card">
       <Image
+        alt=""
         className="rounded-t-xl"
         src={imgSrc}
+        priority
         width="100"
         height="60"
         layout="responsive"
-        objectFit="none"
         quality={100}
       />
 
