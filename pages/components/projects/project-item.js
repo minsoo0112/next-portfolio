@@ -1,14 +1,14 @@
 import Image from "next/image";
 
 export default function ProjectItem({ data }) {
-  const title = data.properties?.Title.title[0].plain_text;
-  const github = data.properties?.Github.url;
-  const description = data.properties?.Description.rich_text[0].plain_text;
-  const members = data.properties?.Members.rich_text[0].plain_text;
-  const myRole = data.properties?.MyRole.rich_text[0].plain_text;
-  const workPeriod = data.properties?.WorkPeriod.date;
+  const title = data?.properties.Title.title[0].plain_text;
+  const github = data?.properties.Github.url;
+  const description = data?.properties.Description.rich_text[0].plain_text;
+  const members = data?.properties.Members.rich_text[0].plain_text;
+  const myRole = data?.properties.MyRole.rich_text[0].plain_text;
+  const workPeriod = data?.properties.WorkPeriod.date;
   const imgSrc = data.cover.file.url;
-  const tags = data.properties?.Tags.multi_select;
+  const tags = data?.properties.Tags.multi_select;
 
   return (
     <div className="project-card">
