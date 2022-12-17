@@ -22,15 +22,18 @@ export default function Main() {
           </p>
           <div className="flex justify-center">
             <Link href="/teamProjects">
-              <button className="btn-project">
-                팀 프로젝트 보러가기
-              </button>
+              <button className="btn-project">팀 프로젝트 보러가기</button>
             </Link>
             <Link href="/toyProjects">
               <button className="btn-project ml-4">
                 개인 프로젝트 보러가기
               </button>
             </Link>
+            <a href="https://github.com/Minsoo7044">
+              <button className="btn-project ml-4">
+                깃허브 보러가기
+              </button>
+            </a>
           </div>
         </div>
       </div>
