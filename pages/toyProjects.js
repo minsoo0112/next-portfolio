@@ -16,11 +16,11 @@ export default function ToyProjects({ projects }) {
         <span className="pl-4 text-blue-300">{projects?.results.length}</span>
       </h1>
 
-      {/* <div className="grid grid-cols-1 md:grid-cols-2 py-5 m-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 py-5 m-6">
         {projects && projects.results.map((project) => (
           <ToyProjectItem key={project.id} data={project} />
         ))}
-      </div> */}
+      </div>
     </Layout>
   );
 }
