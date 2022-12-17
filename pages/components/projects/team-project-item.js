@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function ProjectItem({ data }) {
+export default function TeamProjectItem({ data }) {
   const title = data?.properties.Title.title[0].plain_text;
   const github = data?.properties.Github.url;
   const description = data?.properties.Description.rich_text[0].plain_text;

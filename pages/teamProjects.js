@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Layout from "./components/layout";
 import { TOKEN, DATABASE_ID } from "../config";
-import ProjectItem from "./components/projects/project-item";
+import TeamProjectItem from "./components/projects/team-project-item";
 
 export default function Projects({ projects }) {
   return (
@@ -18,7 +18,7 @@ export default function Projects({ projects }) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 py-5 m-6">
         {projects && projects.results.map((project) => (
-          <ProjectItem key={project.id} data={project} />
+          <TeamProjectItem key={project.id} data={project} />
         ))}
       </div>
     </Layout>
