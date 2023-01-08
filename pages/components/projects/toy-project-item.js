@@ -1,9 +1,9 @@
 export default function ProjectItem({ data }) {
-  const title = data.properties.Title.title[0].plain_text;
-  const github = data.properties.Github.url;
-  const description = data.properties.Description.rich_text[0].plain_text;
-  const workPeriod = data.properties.WorkPeriod.date.start;
-  const tags = data.properties.Tags.multi_select;
+  const title = data?.properties.Title.title[0].plain_text;
+  const github = data?.properties.Github.url;
+  const description = data?.properties.Description.rich_text[0].plain_text;
+  const workPeriod = data?.properties.WorkPeriod.date.start;
+  const tags = data?.properties.Tags.multi_select;
 
   return (
     <div className="project-card p-3">
