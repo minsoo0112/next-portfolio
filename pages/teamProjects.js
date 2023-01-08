@@ -12,14 +12,11 @@ export default function Projects({ projects }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1 className="flex items-center justify-center text-4xl font-bold">
-        총 프로젝트 :
-        <span className="pl-4 text-blue-300">{projects?.results.length}</span>
+        총 프로젝트 :<span className="pl-4 text-blue-300">{projects?.results.length}</span>
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 py-5 m-6">
-        {projects && projects.results.map((project) => (
-          <TeamProjectItem key={project.id} data={project} />
-        ))}
+        {projects && projects.results.map((project) => <TeamProjectItem key={project.id} data={project} />)}
       </div>
     </Layout>
   );
@@ -46,10 +43,7 @@ export async function getStaticProps() {
     }),
   };
 
-  const res = await fetch(
-    `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
-    options
-  );
+  const res = await fetch(`https://api.notion.com/v1/databases/${DATABASE_ID}/query`, options);
 
   const projects = await res.json();
 
